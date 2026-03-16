@@ -24,4 +24,13 @@ abstract class DioHelper {
     final res = await dio.get(endPoint, queryParameters: queryParameters);
     return res;
   }
+
+  static Future<Response<dynamic>> postData({
+    required String endPoint,
+    Map<String, dynamic>? data,
+    Options? options
+  }) async {
+    final res = await dio.post(endPoint, data: data, options: options);
+    return res;
+  }
 }
