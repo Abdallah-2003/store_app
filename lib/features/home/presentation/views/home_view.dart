@@ -1,7 +1,7 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:schooler_chat/constants.dart';
+import 'package:schooler_chat/features/home/data/repo/home_repo.dart';
 import 'package:schooler_chat/features/home/presentation/cubit/home_cubit.dart';
 import 'package:schooler_chat/features/home/presentation/cubit/home_states.dart';
 import 'package:schooler_chat/features/home/presentation/views/widgets/custom_product_item.dart';
@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(Dio())..fetchProducts(),
+      create: (context) => HomeCubit(HomeRepo())..fetchProducts(),
       child: Scaffold(
         backgroundColor: kPrimaryColor,
         body: BlocBuilder<HomeCubit, HomeState>(
