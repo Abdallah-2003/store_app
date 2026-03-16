@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schooler_chat/core/networking/dio_helper.dart';
 import 'package:schooler_chat/core/routing/app_router.dart';
 import 'package:schooler_chat/core/routing/routes.dart';
 import 'package:schooler_chat/core/services/cash_helper.dart';
@@ -6,6 +7,7 @@ import 'package:schooler_chat/core/services/cash_helper.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CashHelper.init();
+  await DioHelper.init();
   runApp(const StoreApp());
 }
 
