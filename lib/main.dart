@@ -19,8 +19,9 @@ class StoreApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'StoreApp',
-      initialRoute: CashHelper.getData('accessToken') == null ? Routes.loginView : Routes.homeView,
+      initialRoute: Routes.loginView,
       onGenerateRoute: AppRouter().generateRoute,
       );
   }
 }
+// CashHelper.getData('accessToken') == null ? Routes.loginView : Routes.homeView
