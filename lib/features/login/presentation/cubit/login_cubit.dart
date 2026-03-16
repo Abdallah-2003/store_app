@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:schooler_chat/core/services/cash_helper.dart';
-import 'package:schooler_chat/features/login/cubit/login_states.dart';
+import 'package:schooler_chat/features/login/presentation/cubit/login_states.dart';
 
 class LoginCubit extends Cubit<LoginStates> {
   LoginCubit(this.dio) : super(InitialLoginState());

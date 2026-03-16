@@ -17,7 +17,6 @@ class HomeView extends StatelessWidget {
         backgroundColor: kPrimaryColor,
         body: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
-            // Added "return" here to solve the error
             return state is HomeLoadingState
                 ? const Center(child: CircularProgressIndicator())
                 : state is HomeFailureState
@@ -45,8 +44,7 @@ class HomeView extends StatelessWidget {
                                     const SizedBox(height: 10),
                                     Expanded(
                                       child: GridView.builder(
-                                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                                        // Update this to use dynamic count
+                                        padding: const EdgeInsets.symmetric(horizontal: 16),                                    
                                         itemCount: state.products.length, 
                                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 2,
@@ -67,9 +65,8 @@ class HomeView extends StatelessWidget {
                                   ],
                                 ),
                               )
-                        : const SizedBox(); // Fallback return
-          },
-        ),
+                        : const SizedBox();
+  }),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: const Color(0xFF1B2631),
           type: BottomNavigationBarType.fixed,

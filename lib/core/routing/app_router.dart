@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schooler_chat/core/routing/routes.dart';
 import 'package:schooler_chat/features/home/presentation/views/home_view.dart';
-import 'package:schooler_chat/features/login/views/login_view.dart';
+import 'package:schooler_chat/features/login/presentation/views/login_view.dart';
 
 class AppRouter {
 

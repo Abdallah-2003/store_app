@@ -5,10 +5,10 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:schooler_chat/constants.dart';
 import 'package:schooler_chat/core/functions/show_scafold.dart';
 import 'package:schooler_chat/core/routing/routes.dart';
-import 'package:schooler_chat/features/login/cubit/login_cubit.dart';
-import 'package:schooler_chat/features/login/cubit/login_states.dart';
-import 'package:schooler_chat/features/login/widgets/custom_bottom.dart';
-import 'package:schooler_chat/features/login/widgets/custom_text_field.dart';
+import 'package:schooler_chat/features/login/presentation/cubit/login_cubit.dart';
+import 'package:schooler_chat/features/login/presentation/cubit/login_states.dart';
+import 'package:schooler_chat/features/login/presentation/views/widgets/custom_bottom.dart';
+import 'package:schooler_chat/features/login/presentation/views/widgets/custom_text_field.dart';
 
 
 
@@ -28,6 +28,7 @@ class LoginView extends StatelessWidget {
           if (state is LoadingLoginState) {
           isLoading = true;
         } else if (state is SuccessLoginState) {
+          showScafold(context, 'Login successfully');
           Navigator.pushReplacementNamed(context, Routes.homeView);
           isLoading = false;
         } else if (state is FailureLoginState) {
@@ -104,8 +105,7 @@ class LoginView extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              // Kept navigation as it's part of UI flow
-                              // Navigator.pushNamed(context, RegisterView.id);
+                        
                             },
                             child: const Text(
                               'Sign Up',
