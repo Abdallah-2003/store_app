@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:schooler_chat/features/home/data/product_model.dart';
+import 'package:schooler_chat/features/home/data/model/product_model.dart';
 import 'package:schooler_chat/features/home/presentation/cubit/home_states.dart';
 
 class HomeCubit extends Cubit<HomeState> {

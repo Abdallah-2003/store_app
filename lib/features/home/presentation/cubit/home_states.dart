@@ -1,5 +1,5 @@
 
-import 'package:schooler_chat/features/home/data/product_model.dart';
+import 'package:schooler_chat/features/home/data/model/product_model.dart';
 
 abstract class HomeState {}
 
