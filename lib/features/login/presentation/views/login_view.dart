@@ -1,10 +1,10 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:schooler_chat/constants.dart';
 import 'package:schooler_chat/core/functions/show_scafold.dart';
 import 'package:schooler_chat/core/routing/routes.dart';
+import 'package:schooler_chat/features/login/data/repo/login_repo.dart';
 import 'package:schooler_chat/features/login/presentation/cubit/login_cubit.dart';
 import 'package:schooler_chat/features/login/presentation/cubit/login_states.dart';
 import 'package:schooler_chat/features/login/presentation/views/widgets/custom_bottom.dart';
@@ -22,7 +22,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginCubit(Dio()),
+      create: (context) => LoginCubit(LoginRepo()),
       child: BlocConsumer<LoginCubit, LoginStates>(
         listener: (context, state) {
           if (state is LoadingLoginState) {
