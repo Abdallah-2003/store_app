@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
         if (value!.isEmpty) {
           return 'This field is required';
         }
+        return null;
       },
       onChanged: onChanged,
       keyboardAppearance: Brightness.dark,

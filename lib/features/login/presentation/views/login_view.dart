@@ -17,7 +17,7 @@ class LoginView extends StatelessWidget {
   String? name, password;
   bool isLoading = false;
 
-   LoginView({super.key});
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class LoginView extends StatelessWidget {
                           if (formKey.currentState!.validate()) {
                             BlocProvider.of<LoginCubit>(context).login(name: name!, password: password!);
                           }
-                          Navigator.pushNamed(context, Routes.homeView);
+                          
                         },
                         text: 'Login',
                       ),
